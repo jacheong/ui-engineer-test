@@ -12,6 +12,8 @@ export class ListComponent implements OnInit, OnDestroy {
 
   items$: any;
   items: Item[];
+  displayContents: boolean = true;
+  newCounter: number = 0;
 
   constructor(private itemService: ItemService) { }
 
@@ -27,6 +29,25 @@ export class ListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.items$.unsubscribe();
+  }
+
+  addListItem() {
+    this.itemService.addItem(new Item({
+      image: "https://picsum.photos/75/75/?image=" + Math.floor(Math.random() * 100) + 1
+    }));
+    this.newCounter++;
+  }
+
+  deleteListItem(index) {
+    this.itemService.removeItem(index);
+  }
+
+  handleNewCounter(event) {
+    this.newCounter--;
+  }
+
+  toggleContents() {
+    this.displayContents = !this.displayContents;
   }
 
 }

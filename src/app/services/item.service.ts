@@ -16,7 +16,7 @@ export class ItemService {
     }
 
     addItem(item: Item) {
-        this.itemList.push(item);
+        this.itemList.unshift(item);
     }
 
     removeItem(index: number) {

@@ -1,1 +1,14 @@
-<div>{{item.title}}</div>
+<div [class.item-container-new]="item.isNew" [class.item-container-old]="!item.isNew">
+    <img [src]="item.image" class="item-image" alt="Image not found" onerror="this.onerror=null;this.src='assets/no-image.png';">
+    <div class="item-content">
+        <div class="item-title">{{item.title}}</div>
+        <div class="item-subtitle">{{item.subtitle}}</div>
+        <div [class.item-body-hide]="!show" [class.item-body-show]="show">
+            {{item.content}}</div>
+        <div class="item-date">{{item.dateCreated | date:'EEEE MMMM d y'}}</div>
+    </div>
+    <div class="spacer"></div>
+    <button type="button" (click)="handleDelete()">
+        <i class="material-icons">delete</i>
+    </button>
+</div>

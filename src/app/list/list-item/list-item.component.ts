@@ -11,12 +11,17 @@ export class ListItemComponent implements OnInit {
   @Input() item: Item;
   @Input() index: number;
   @Output() deleteClick: EventEmitter<number> = new EventEmitter<number>();
+  @Output() newStatus: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   show: boolean = false;
 
   @HostListener('click') openItem() {
     this.show = !this.show;
-    this.item.isNew = false;
+    if (this.item.isNew) {
+      this.item.isNew = false;
+      this.newStatus.emit(false);
+    }
+
   }
 
   constructor() { }
@@ -26,6 +31,9 @@ export class ListItemComponent implements OnInit {
 
   handleDelete() {
     this.deleteClick.emit(this.index);
+    if (this.item.isNew) {
+      this.newStatus.emit(false);
+    }
   }
 
 }

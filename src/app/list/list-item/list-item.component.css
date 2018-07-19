@@ -1,0 +1,189 @@
+.item-container-new {
+    display: flex;
+    border-bottom: solid 1px #E8E8E8; 
+    position: relative;
+}
+
+.item-container-new:hover {
+    cursor: pointer;
+}
+
+.item-container-new::before {
+    position: absolute;
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: blue;
+    z-index: 1;
+}
+
+.item-container-old {
+    display: flex;
+    border-bottom: solid 1px #E8E8E8; 
+    position: relative;
+}
+
+.item-container-old:hover {
+    cursor: pointer;
+}
+
+
+.item-image {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    margin: 1.5em;
+    border-radius: 50%;
+    align-self: center;
+}
+
+.item-content {
+    margin: 1em;
+    width: 50%;
+}
+
+.item-title {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.item-subtitle {
+    color: grey;
+}
+
+.item-body-hide {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: lightgrey;
+}
+
+.item-body-show {
+    color: lightgrey;
+}
+
+
+.item-date {
+    position: relative;
+    padding-left: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: lightgrey;
+}
+
+.item-date::before {
+    font-family: 'Material Icons';
+    position: absolute;
+    content: 'calendar_today';
+    left: 0;
+    top: 10px;
+    font-size: 1.5em;
+    color: grey;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+button {
+    border-radius: 50%;
+    background: white;
+    width: 4em;
+    height: 4em;
+    margin: 1.5em;
+    border: none;
+    align-self: center;
+}
+
+button:hover {
+    cursor: pointer;
+    outline: none;    
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+
+@media screen and ( max-width: 900px ) {
+    .item-container {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 1px #E8E8E8;
+    }
+    
+    .item-image {
+        display: none;
+    }
+
+    .item-container:hover {
+        cursor: pointer;
+    }
+    
+    .item-content {
+        margin: 1em;
+        width: 50%;
+    }
+    
+    .item-title {
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+    
+    .item-subtitle {
+        color: grey;
+    }
+    
+    .item-body-hide {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: lightgrey;
+    }
+    
+    .item-body-show {
+        color: lightgrey;
+    }
+    
+    
+    .item-date {
+        position: relative;
+        padding-left: 2em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        color: lightgrey;
+    }
+    
+    .item-date::before {
+        font-family: 'Material Icons';
+        position: absolute;
+        content: 'calendar_today';
+        left: 0;
+        top: 10px;
+        font-size: 1.5em;
+        color: grey;
+    }
+    
+    .spacer {
+        flex: 1 1 auto;
+    }
+    
+    button {
+        border-radius: 50%;
+        background: white;
+        width: 4em;
+        height: 4em;
+        margin: 1.5em;
+        border: none;
+        align-self: center;
+    }
+    
+    button:hover {
+        cursor: pointer;
+        outline: none;    
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+}
